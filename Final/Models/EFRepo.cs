@@ -30,5 +30,10 @@ public class EFRepo : IRepo
         get { return _context.Movies; }
         set { _context.Movies = (DbSet<Movie>)value; }
     }
+    public void AddMovie(Movie response)
+    {
+        _context.Movies.Add(response);
+        _context.SaveChanges();
+    }
 }
 
